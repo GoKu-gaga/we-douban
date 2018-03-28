@@ -4,19 +4,20 @@
   background-color: #f8f9fb;
 }
 .board-item {
-  padding-top: 10rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
   margin-bottom: 20rpx;
   background-color: #fff;
 }
-.board-nav {
+.board-item .board-nav {
   border-left: 10rpx solid #00b51e;
   padding-left: 10rpx;
+  margin-bottom: 20rpx;
 }
 .board-item .board-title {
   display: flex;
-  margin-bottom: 10rpx;
   width: 100%;
-  font-size: 35rpx;
+  font-size: 30rpx;
 }
 .movie-list {
   height: 300rpx;
@@ -37,4 +38,11 @@
 .movie-item image {
   width: 180rpx;
   height: 250rpx;
+  margin-bottom: 10rpx;
+}
+.movie-item text {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
