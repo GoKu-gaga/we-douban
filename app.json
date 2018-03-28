@@ -1,0 +1,26 @@
+{
+  "pages":[
+    "pages/movie/movie",
+    "pages/profile/profile"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00b51e",
+    "navigationBarTitleText": "豆瓣",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  }
+}

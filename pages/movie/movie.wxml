@@ -1,0 +1,20 @@
+<!--pages/movie/movie.wxml-->
+<view class="board">
+  <view class="board-item" wx:for="{{boards}}" wx:key="index">
+    <navigator class="board-nav">
+      <view class="board-title">
+        <text>{{item.title}}</text>
+      </view>
+    </navigator>
+    <scroll-view class="movie-list" scroll-x>
+      <view class="list-inner">
+        <navigator wx:for="{{movieList}}" wx:key="index">
+          <view class="movie-item">
+            <image src="{{item.src}}" mode="aspectFill"/>
+            <text>{{item.name}}</text>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+</view>

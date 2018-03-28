@@ -1,0 +1,40 @@
+/* pages/movie/movie.wxss */
+.board {
+  box-sizing: border-box;
+  background-color: #f8f9fb;
+}
+.board-item {
+  padding-top: 10rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.board-nav {
+  border-left: 10rpx solid #00b51e;
+  padding-left: 10rpx;
+}
+.board-item .board-title {
+  display: flex;
+  margin-bottom: 10rpx;
+  width: 100%;
+  font-size: 35rpx;
+}
+.movie-list {
+  height: 300rpx;
+  margin-top: 10rpx;
+}
+.list-inner {
+  display: flex;
+  padding-left: 20rpx;
+  width: 900rpx;
+}
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+  width: 180rpx;
+  font-size: 30rpx;
+}
+.movie-item image {
+  width: 180rpx;
+  height: 250rpx;
+}
