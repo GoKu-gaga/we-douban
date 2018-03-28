@@ -1,0 +1,52 @@
+/* pages/search/search.wxss */
+.input-box {
+  padding: 15rpx 20rpx;
+  background-color: #00b51e;
+}
+.input-box input{
+  background-color: white;
+  border-radius: 10rpx;
+  padding: 10rpx 15rpx;
+}
+.btns {
+  display: flex;
+  background-color: white;
+  padding: 10rpx;
+}
+.btns button {
+  flex: 1;
+  margin: 10rpx;
+}
+.board {
+  background-color: #fff;
+}
+.board-item {
+  display: flex;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  width: 100%;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.board-item image {
+  width: 120rpx;
+  min-width: 120rpx;
+  height: 160rpx;
+  margin-right: 10rpx;
+}
+.board-item .item-text {
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+}
+.board-item .item-text text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item-average {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  color: #b3bbc3;
+}
