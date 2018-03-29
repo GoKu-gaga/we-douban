@@ -11,7 +11,9 @@ Page({
     inputValue: '',
     pageIndex: 1,
     pageSize: 10,
-    dataList: []
+    dataList: [],
+    hasMore: false,
+    isLoading: false
   },
 
   bindKeyInput: function (e) {
@@ -20,11 +22,21 @@ Page({
     })
   },
 
+  /**
+   * 加载更多
+   */
   loadMore () {
-    if (!this.data.inputValue) return
+    let { searchType, inputValue, pageIndex, pageSize, isLoading } = this.data
+    if (!inputValue || isLoading) return
     let douban = app.douban
-    let { searchType, inputValue, pageIndex, pageSize } = this.data
     let pro
+    this.setData({
+      isLoading: true
+    })
+    wx.showLoading({
+      title: '加载中...',
+    })
+
     if(searchType === 'movie') {
       pro = douban.getMovies('search', pageIndex++, pageSize, inputValue)
     }
@@ -33,22 +45,34 @@ Page({
     }
     let resType = searchType === 'movie' ? 'subjects' : 'books'
     pro.then(res => {
+      if(res[resType].length > 0) {
+        this.setData({
+          hasMore: true,
+          pageIndex: pageIndex,
+          dataList: this.data.dataList.concat(res[resType])
+        })
+      } else {
+        this.setData({
+          hasMore: false
+        })
+      }
       this.setData({
-        pageIndex: pageIndex,
-        dataList: this.data.dataList.concat(res[resType])
+        isLoading: false
       })
+      wx.hideLoading()
     })
     .catch(e => {
+      this.setData({
+        isLoading: false
+      })
+      wx.hideLoading()
       console.log(e)
     })
   },
-
+  /**
+   * 搜索电影
+   */
   searchMovies () {
-    if (this.data.searchType === 'book') {
-      this.setData({
-        pageIndex: 1
-      })
-    }
     this.setData({
       pageIndex: 1,
       searchType: 'movie',
@@ -56,14 +80,12 @@ Page({
     })
     this.loadMore()
   },
-
+  /**
+   * 搜索图书
+   */
   searchBook () {
-    if (this.data.searchType === 'movie') {
-      this.setData({
-        pageIndex: 1
-      })
-    }
     this.setData({
+      pageIndex: 1,
       searchType: 'book',
       dataList: []
     })
@@ -74,6 +96,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    let { hasMore, isLoading } = this.data
+    if (!hasMore || isLoading) return
     this.loadMore()
   },
 

@@ -14,11 +14,10 @@ Page({
       { key: 'top250'}
     ]
   },
-
   /**
-   * 生命周期函数--监听页面加载
+   * 拉取数据
    */
-  onLoad: function (options) {
+  loadData () {
     wx.showLoading({
       title: '加载中...',
     })
@@ -31,8 +30,21 @@ Page({
         })
     })
     Promise.all(tasks).then(boards => {
-      this.setData({boards: boards, loading: false})
+      this.setData({ boards: boards, loading: false })
       wx.hideLoading()
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad () {
+    this.loadData()
+  },
+  /**
+   * 生命周期函数--监听页面下拉刷新
+   */
+  onPullDownRefresh() {
+    this.loadData()
+    wx.stopPullDownRefresh()
   }
 })

@@ -1,13 +1,13 @@
 {
   "pages":[
-    "pages/search/search",
     "pages/movie/movie",
+    "pages/search/search",
     "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#00b51e",
-    "navigationBarTitleText": "豆瓣",
+    "navigationBarTitleText": "豆豆瓣",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
