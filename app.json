@@ -12,7 +12,7 @@
   },
   "tabBar": {
     "color": "#666666",
-    "selectedColor": "#000000",
+    "selectedColor": "#00b51e",
     "list": [
       {
         "pagePath": "pages/movie/movie",

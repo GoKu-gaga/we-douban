@@ -1,1 +1,25 @@
 /* pages/profile/profile.wxss */
+.login-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+}
+.login-title text {
+  font-size: 80rpx;
+  color: #00b51e;
+}
+.login-form {
+  margin: 0 30rpx;
+  border: 2rpx solid #eeeeee;
+  border-radius: 10rpx;
+}
+.login-form input {
+  padding: 20rpx;
+}
+.login-form input:last-child {
+  border-top: 2rpx solid #eeeeee;
+}
+.login-btn {
+  padding: 30rpx;
+}

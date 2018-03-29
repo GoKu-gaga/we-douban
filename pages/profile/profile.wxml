@@ -1,2 +1,11 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="login-title">
+  <text>Welcome</text>
+</view>
+<view class="login-form">
+  <input placeholder="邮箱 / 手机号 / 用户名"></input>
+  <input placeholder="密码"></input>
+</view>
+<view class="login-btn">
+  <button type="primary" bindtap="loginHandler">登录</button>
+</view>
